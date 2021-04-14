@@ -1,0 +1,3 @@
+module testPjt {
+	exports testPjt;
+}

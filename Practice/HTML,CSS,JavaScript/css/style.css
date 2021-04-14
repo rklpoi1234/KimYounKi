@@ -1,0 +1,15 @@
+@keyframes watch{
+    0%{transform: translate(0);}
+    20%{transform: translate(2px,2px)}
+    40%{transform: translate(2px,-2px)}
+    60%{transform: translate(-2px,2px)}
+    80%{transform: translate(-2px,-2px)}
+    100%{transform: translate(0)}
+}
+
+.time {
+    width: 100px;
+    height: 100px;
+    background: url(/css/45799794-알람-아이콘-.jpg)center center /100% no-repeat;
+    animation: watch 0.3s linear infinite both;
+}

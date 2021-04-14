@@ -1,0 +1,83 @@
+:root {
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-Blue: #3b88c3;
+  --color-Yellow: #fbbe28;
+  --color-Pink: #fd7f84;
+
+  /*size*/
+  --size-button: 60px;
+  --size-font: 18px;
+  /*padding*/
+  --base-space: 8px;
+  --border-rad: 4px;
+
+  /*animation*/
+  --animation-duration: 300ms;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn:hover,
+.logo:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform var(--animation-duration) ease;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-right: var(--base-space);
+}
+
+.wear {
+  height: var(--size-button);
+  width: var(--size-button);
+}
+
+.btn.color {
+  border-radius: var(--border-rad);
+  font-size: var(--size-font);
+  padding: var(--base-space) * 2;
+}
+.blue {
+  background-color: var(--color-Blue);
+}
+
+.Yellow {
+  background-color: var(--color-Yellow);
+}
+
+.Pink {
+  background-color: var(--color-Pink);
+}
+
+.items {
+  width: 60%;
+  height: 60%;
+  list-style: none;
+  padding-left: 0;
+  overflow-y: scroll;
+}
+
+.item {
+  background-color: var(--color-white);
+  padding-left: var(--base-space);
+  margin-bottom: var(--base-space);
+  display: flex;
+  align-items: center;
+}

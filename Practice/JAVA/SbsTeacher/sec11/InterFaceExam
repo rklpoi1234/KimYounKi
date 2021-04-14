@@ -1,0 +1,17 @@
+package sec11;
+
+public class InterFaceExam {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		RemoteControl rc = new LGTv();
+		RemoteControl rc2 = new SamsungTv();
+
+		rc.volumeUp();
+		rc2.volumeUp();
+
+		rc.chkVolume();
+		rc2.chkVolume();
+	}
+
+}

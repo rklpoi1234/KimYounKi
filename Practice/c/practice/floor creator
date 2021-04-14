@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main ()
+{
+    int floor;
+    printf("몇 층으로 쌓을까요?\n");
+    scanf("%d", &floor);
+    for (int i=0;i<floor;i++) //0부터 시작하기 때문에 i<floor
+    {
+        for(int j=i;j<floor-1;j++);//마지막 층을 제외하고 각 층수보다 1적은 수만큼 공백이 들어가야 하기때문에
+        {
+            printf("");
+
+        }
+    //그 뒤에 입력할 별 갯수를 설장하는 내용
+    for (int k=0;k<i*2+1;k++ )
+    {
+        printf("*");
+    }
+    printf("\n" );//한층에 대해서 실행한 후 줄바꿈을 하지 않으면 **************...이렇게 출력됨
+
+    }
+    return 0;
+
+}

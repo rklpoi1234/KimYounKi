@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int input;
+    scanf("%d", &input);
+    switch (input){
+        case 0 : printf("o val");
+            break;
+        case 1 : printf("o val");
+            break;
+        case 2 : printf("o val");
+            break;
+        case 3 : printf("o val");
+            break;
+        case 4 : printf("o val");
+            break;
+
+      default : printf("x val");
+
+    }
+ }

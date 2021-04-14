@@ -1,0 +1,45 @@
+#include <stdio.h>
+#define COLUMN 7 //세로줄수 7 하드
+#define ROW 5 //가로줄수 5 하드
+
+int main(){
+    int array[ROW][COLUMN]={0,};//2차원 배열생성후0초기
+    int i,j; //for구문을 돌리기 위해 사용될 변수
+    int cnt=1; //초기값을 1로...
+
+    int colume_l=0; //가로열의 왼쪽값
+    int colume_r=COLUMN-1; //가로열의 오른쪽값
+    int row_u=0; //세로행의 위쪽값
+    int row_d=ROW-1; //세로행의 아랫쪽값
+    int x=0, y=0; //시작위치
+
+    while  (cnt<=COLUMN*ROW){
+         for (x=colume_l;x<=colume_r&&cnt<=COLUMN*ROW;x++)array[y][x]=cnt++;
+                x--;
+                row_u++;
+        for (y=row_u;y<=row_d&&cnt<=COLUMN*ROW;y++)array[y][x]=cnt++;
+        y--;
+        colume_r--;
+        for (x=colume_r;x>=colume_l&&cnt<=COLUMN*ROW;x--)array[y][x]=cnt++;
+        x++;
+        row_d--;
+        for (y=row_d;y>=row_u&&cnt<=COLUMN*ROW;y--)array[y][x]=cnt++;
+        y++;
+        colume_l++;
+
+    }
+//배열에 숫자 입력
+
+    for(i=0;i<ROW;i++){
+        for(j=0;j<COLUMN;j++){
+            printf("%2d ", array[i][j]);
+        }
+        printf("\n");
+    }
+//배열을 표시 -이전과 동일
+
+    return 0;
+
+
+
+}

@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int isyoon(int);
+int main()
+{
+    int year; //user input
+    int month; //user input
+    int i, j, k; //for , save
+    int sum = 0;
+    int chk = 0;
+    int basicyear[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    printf("출력할 년,달 입력:");
+    scanf("%d %d", &year, &month);
+
+    if (isyoon(year)) {
+        chk = 1;
+        basicyear[1]++;
+    } else
+        chk = 0;
+
+    sum = 365;
+    for (i = 1; i < year; i++) {}
+    if (isyoon(i))
+        sum += 366;
+    else
+        sum += 365;
+
+    for (int i=0;i<10;i++ ){
+        sum += basicyear[i];
+    }
+    k= sum % 7;
+
+    printf("sun mon tus wed thu fri sat\n");
+    printf("=========================================\n");
+    for (j = 0;j < k;j++) {
+        printf("\t");
+    }
+
+    for (i = 1;i <= basicyear[month - 1];i++) {
+
+        printf("%d\t", i);
+        if (k == 6) {
+            k = -1;
+            printf("\n");
+        }
+        k++;
+    }
+    printf("\n");
+}
+int isyoon(int a) {
+    if ((a % 4 == 0) && !(a % 100 == 0) || (a % 400 == 0)) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

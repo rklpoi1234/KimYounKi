@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<stdlib.h> //  rand(), srand()를 사용하기 위한 header파일 
+#include<time.h> // srand()에 들어갈 time()를 사용하기 위한 header파일 
+ 
+int r_num;    //컴퓨터가 만들 랜덤한 값이 저장될 변수 
+int user_num; //사용자가 입력한 값이 저장될 변수 
+int temp_num; 
+int cnt; // 입력시도수를 카운트 
+ 
+void reset(void); //초기화를 시키는 함수 
+ 
+int main(){
+    
+    reset(); 
+    
+    while(1){
+        //숫자입력을 받아서 숫자가 1~100사이인지, 게임을 종료하는 숫자인 0인지를 판별 
+        while(1){
+            temp_num=0;
+            printf("%03d Please pick a number (1 ~ 100) : ", cnt);
+            fflush(stdin);
+            scanf("%d", &temp_num);
+    
+            if(temp_num==-1) exit(0); 
+            if(temp_num>=1&&temp_num<=100){
+                cnt++;
+                break;
+            } 
+            if(temp_num<1||temp_num>100) printf("    Please enter a number between 1 to 100.\n\n");        
+        }
+        user_num=temp_num;
+        
+        //입력받은 숫자를 비교하고 결과 출력 
+        if(user_num>r_num) printf("    %3d is to high!\n\n",user_num);
+        if(user_num<r_num) printf("    %3d is to low!\n\n",user_num);
+        if(user_num==r_num){
+            printf("    %3d is correct!\n\n",user_num);
+            printf("    Please enter any key to restart");
+            fflush(stdin);
+            getchar();
+            reset();
+        }
+    }
+} 
+ 
+void reset(void){
+    system("cls"); //화면지우기 
+    srand(time(NULL)); //난수표 생성 
+ 
+    r_num=rand()%99+1; //난수 입력 
+    cnt=1;
+    user_num=0;
+    printf("<<< GUESS MY NUMBER >>>\n");
+    printf("Enter '-1' to quit..\n\n");
+}
+ 

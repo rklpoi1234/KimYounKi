@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define COLUME 7//2차원 배열의 세로줄수를 7로고정
+#define ROW 5 //2차원 배열의 가로줄수를 5로 고정
+
+int main() {
+    int array[ROW][COLUME]={0,};//2차원 배열 생성후 0으로초기화
+    int i,j;//for 구문을 돌리기 위해 사용될 변수
+    int cnt=1; //초기값을 1로
+
+    for (int i = 0; i < ROW; i++) {
+        for (int j = 0; j < COLUME; j++) {
+            array[i][j]=cnt++;//cnt값 입력후 1증가
+        }
+    }
+//배열에 숫자입력
+
+    for (int i = 0; i < ROW; i++) {
+        for (int j = 0; j < COLUME; j++) {
+            printf("%2d",array[i][j]);
+        }
+        printf("\n");//한줄이 끝나면 개행
+    }
+//배열을 표시
+
+    return 0;//0을 리턴하면서 종료
+}

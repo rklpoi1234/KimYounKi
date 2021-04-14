@@ -1,0 +1,47 @@
+#include <stdio.h>
+#define COLUME 7 //2차원 배열의 세로줄수를 7로고정
+#define ROW 5 //2차원 배열의 가로줄수를 5로고정
+
+int main() {
+    int array[ROW][COLUME]={0,};//2차원 배열생성후0초기
+    int i,j; //for
+    int cnt=1; //초기값을1로
+
+    int x=0, y=-1;
+    enum {UP,DOWN}dir; //dir이오직 업,다운의 값만 가질수 있게
+    dir=UP; //dir 초기값을 up설정
+
+    int total=COLUME*ROW;//2차원 배열의 전체 칸수
+
+    while(cnt<=total){
+        if(x==COLUME-1&&cnt<=total){//2차원 배열의 오른쪽긑에 도달하는경우
+            array[++y][x]=cnt++;
+            dir=DOWN;
+        }
+        if(y==ROW-1&&cnt<=total) {//2차원 배열의 아래쪽긑에 도달하는경우
+            array[y][++x] = cnt++;
+            dir = UP;
+        }
+        if(y==0&&cnt<=total) {//2차원 배열의 위쪽긑에 도달하는경우
+            array[y][++x] = cnt++;
+            dir = DOWN;
+        }
+        if(x==0&&cnt<=total) {//2차원 배열의 왼쪽긑에 도달하는경우
+            array[++y][x] = cnt++;
+            dir = UP;
+        }
+        if(dir==UP&&x!=COLUME-1&&y!=0&&cnt<=total)array[--y][++x]=cnt++;
+              //그 외 dir이 up인 경우
+        if(dir==DOWN&&y!=ROW-1&&x!=0&&cnt<=total)array[++y][--x]=cnt++;
+                   //down인 경우
+    }
+    for(i=0;i<ROW;i++){
+        for(j=0;j<COLUME;j++){
+            printf("%2d ", array[i][j]);
+        }
+        printf("\n");
+    }
+//배열을 표시
+
+    return 0;
+}

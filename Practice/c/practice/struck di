@@ -1,0 +1,75 @@
+#include <stdio.h>
+
+struct Student{
+	int stdNum;
+	int stdMat;
+	int stdEng;
+};
+
+
+void main(){
+	
+	
+	struct Student std[10];
+	// 10명의 학생을 담을 배열. 
+	static int stdIndex = 0;
+	// 학생인덱스값 
+	
+	int input = 0;
+	
+
+
+	while(input != 5){
+	
+		printf("학생출석부입니다.\n번호를 입력해주세요.\n");
+		
+		printf("1. 학생정보입력\n");
+		printf("2. 학생정보 출력\n");
+		printf("5. 종료 \n");
+		scanf("%d",&input);
+	
+		if(input == 1 ){
+		
+		if(stdIndex >= 9 ){
+			printf("학생의 수가 가득찼습니다.\n");	
+		}
+		else{
+			
+		
+		
+			int studentNumber;
+			int mathScore;
+			int engScore;
+		
+			printf("학번입력 : ");
+			scanf("%d",&studentNumber); 기
+			printf("수학점수");
+			scanf("%d",&mathScore);
+			printf("영어점수");
+			scanf("%d",&engScore);
+			
+			std[stdIndex].stdNum = studentNumber;
+			std[stdIndex].stdMat = mathScore;
+			std[stdIndex].stdEng = engScore;
+			stdIndex++;
+		 }	
+		}
+		else if(input == 2){
+			
+			if(stdIndex > 0){
+				int i;
+				
+				printf("학번 \t\t 수학 \t\t 영어 \t\t \n");
+				for(i = 0; i< stdIndex; i++){
+					printf("%d \t\t %d \t\t %d \t\t\n",
+                                         std[i].stdNum,std[i].stdMat,std[i].stdEng);
+				} 
+			}
+			else{
+				printf("학생정보가 없음.\n");
+			}
+		}
+		
+		
+	}
+}

@@ -1,0 +1,28 @@
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+
+    char str[] = "abcdefe";
+    int len = strlen(str);
+    printf("%d\n", len ); //인자 : 문자열포인터
+
+    char str2[10];
+    strcpy(str2,str );  // 인자 : 복사할공간, 복사할 대상
+    //스틱코드에 접속하여 생산성을 향상시켜 보세요, https://stickode.com/
+    printf("%s\n", str2 );
+
+    char str3 []= "hello";  char  str4[]="world";
+    strcat(str3,str4 );
+    printf("%s\n", str3);
+    //  인자: 문자열1, 문자열2, 문자열1에  문자열2를 붙임
+
+    char str5[]="hello1";
+    char str6[]="hello";
+    strcmp(str5,str6);
+    int result = strcmp(str5,str6); // 인자, : 문자열1,문자열2.
+       // strcmp return 값 두문자열이 일치할경우  0  ,   첫번째 인자 문자열1 > 두번째 인자 문자열2 = 0보다작음 , 문자열1 <문자열2 = 0보다큼// 인자, : 문자열1,문자열2.
+    // strcmp return 값 두문자열이 일치할경우  0  ,   첫번째 인자 문자열1 > 두번째 인자 문자열2 = 0보다작음 , 문자열1 <문자열2 = 0보다큼
+    printf("two ?\t%d", result);
+
+}

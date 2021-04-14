@@ -1,0 +1,16 @@
+rpm -qa telnet-server //telnet check
+
+dnf -y install telnet-server //telnet install
+
+systemctl start telnet.socket //service start
+systemctl status telnet.socket //service status check
+
+/* adduser teluser
+   passwd teluser */
+   
+   
+   telnet "server ip"
+   whoami
+   exit
+   
+   ping "server ip" //server check

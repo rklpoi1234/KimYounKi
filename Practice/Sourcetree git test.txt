@@ -1,0 +1,14 @@
+-filter-branch has a glut of gotchas generating mangled history
+         rewrites.  Hit Ctrl-C before proceeding to abort, then use an
+         alternative filtering t
+
+git filter-branch --env-filter \
+    'if [ $GIT_COMMIT =  ba70b06aa13d2f66b356a77e42b54fb0670f07bb]
+     then
+         export GIT_AUTHOR_DATE="Wed March 24 6:15:00 2021 +0900"
+         export GIT_COMMITTER_DATE="Wed March 24 6:15:00 2021 +0900"
+     fi'
+
+GIT_COMMITTER_DATE="October 2 6:15:00 2020 +0900" git commit --amend --date="October 2 6:15:00 2020 +0900"
+
+fc804f35903a79e3c2220dd68899a7e5c238ce77

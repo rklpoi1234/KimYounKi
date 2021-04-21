@@ -69,8 +69,13 @@ let myArr2 =
     filter: function (cb) {
         let newArr =[];
         for (let i = 0; i < this.arr.length; i++) {
-            if (cb(this.arr[i])) {
+            if (cb(this.arr[i])) 
+            {   //위처럼 똑같이하면 불리언타입이되어 true,false 나출력이됩니다
+                //아까 위에 예제중 짝수 true 홀수 false를 보고 생각해봤는데
+                //cd % 2 == 0 값이 트루이면 돌려주고 폴스이면 스킵생각
+                //if문을 쓰면 트루일때 불켜지고 펄스일때 꺼짐을이용
                 newArr.push(this.arr[i]);
+                //이렇게 푸시를하면 정수가 배열에담긴다
             }
             
         }
@@ -81,7 +86,7 @@ let myArr2 =
 
 let result = myArr2.filter((cb) =>
 {
-    return cb % 2 == 0;
+    return cb % 2 == 0; //리턴값이 불리언!!!
 })
 
 console.log('myArr2:' +myArr2.arr);

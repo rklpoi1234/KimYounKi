@@ -3,6 +3,8 @@
 
 https://rklpoi1234.github.io/KimYounKi/
 
+https://www.notion.so/e0e510a4be7b4f4686d0ffee7a76c02c
+
 <!--My major is Automotive engineering:car:, and I have been studying computer science💻 since November/01/2020-->
 
 <!--I am studying c and Kotlin language and JAVA. I am interested in Rust, ROS...-->

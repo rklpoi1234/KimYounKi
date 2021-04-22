@@ -3,7 +3,7 @@
 
 https://rklpoi1234.github.io/KimYounKi/
 
-https://www.notion.so/e0e510a4be7b4f4686d0ffee7a76c02c
+https://www.notion.so/8813c7fa38134013b95918dc7c9349a7
 
 <!--My major is Automotive engineering:car:, and I have been studying computer science💻 since November/01/2020-->
 
